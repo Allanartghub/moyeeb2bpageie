@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Coffee Machines | Moyee Coffee Ireland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #e83e8c;
+      --pink-soft: #fff0f7;
+      --black: #111111;
+      --text: #1f1f1f;
+      --muted: #666666;
+      --line: #e7e7e7;
+      --white: #ffffff;
+      --off-white: #fafafa;
+      --cream: #fff8ef;
+      --yellow: #ffce2e;
+      --max-width: 1220px;
+      --radius: 4px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .announcement {
+      background: var(--pink);
+      color: var(--white);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 16px;
+    }
+
+    .nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), calc(100% - 32px));
+      min-height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--pink);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a {
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      min-height: 44px;
+      padding: 12px 22px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .btn:hover,
+    .nav-cta:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--black);
+    }
+
+    .btn.secondary:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn.pink {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: var(--white);
+    }
+
+    .btn.pink:hover {
+      background: var(--black);
+      border-color: var(--black);
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .breadcrumb {
+      padding: 26px 0 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .hero {
+      padding: 42px 0 76px;
+      background: var(--white);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      font-weight: 900;
+      margin-bottom: 22px;
+      max-width: 780px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .pink-text {
+      color: var(--pink);
+    }
+
+    .hero-copy {
+      font-size: 18px;
+      line-height: 1.65;
+      color: #333333;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .trust-chip {
+      border: 1px solid var(--line);
+      background: var(--off-white);
+      color: var(--text);
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      background: var(--off-white);
+      border: 1px solid var(--line);
+      padding: 34px;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 0 55%, var(--pink-soft) 55% 100%);
+    }
+
+    .machine-placeholder {
+      position: relative;
+      width: min(320px, 80%);
+      height: 340px;
+      background: linear-gradient(180deg, #242424, #575757);
+      border-radius: 22px 22px 10px 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: rgba(255,255,255,0.42);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .machine-placeholder::before {
+      content: "Machine Image Placeholder";
+      width: 180px;
+    }
+
+    .bag-placeholder {
+      position: absolute;
+      right: 42px;
+      bottom: 44px;
+      width: 110px;
+      height: 150px;
+      background: var(--pink);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+    }
+
+    .intro-band {
+      background: var(--off-white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 58px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .intro-grid p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444444;
+      margin-bottom: 0;
+    }
+
+    .mini-proof {
+      display: grid;
+      gap: 14px;
+    }
+
+    .proof-item {
+      border-left: 4px solid var(--pink);
+      padding: 6px 0 6px 18px;
+      font-weight: 800;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 36px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    .cards-grid,
+    .included-grid,
+    .product-grid,
+    .bundles-grid,
+    .faq-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .cards-grid,
+    .included-grid,
+    .bundles-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card,
+    .choice-card,
+    .included-card,
+    .bundle-card,
+    .product-card,
+    .faq-item,
+    .quote-panel,
+    .table-wrap {
+      background: var(--white);
+      border: 1px solid var(--line);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .choice-card,
+    .included-card,
+    .bundle-card {
+      padding: 24px;
+      min-height: 230px;
+    }
+
+    .choice-card:hover,
+    .product-card:hover,
+    .bundle-card:hover,
+    .included-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--pink);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.08);
+    }
+
+    .choice-card .range {
+      color: var(--pink);
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      margin: 18px 0 14px;
+    }
+
+    .choice-card p,
+    .included-card p,
+    .bundle-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .mini-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .included-card .number {
+      display: inline-block;
+      color: var(--pink);
+      font-weight: 900;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+
+    .products {
+      background: var(--off-white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .product-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .product-card {
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .product-img {
+      height: 245px;
+      background: #f5f5f5;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .product-img::before {
+      content: "";
+      width: 92px;
+      height: 132px;
+      border-radius: 16px 16px 8px 8px;
+      background: linear-gradient(180deg, #222222, #666666);
+      opacity: 0.9;
+    }
+
+    .product-img.espresso::before {
+      width: 160px;
+      height: 90px;
+      border-radius: 14px;
+    }
+
+    .product-img.accessory::before {
+      width: 74px;
+      height: 108px;
+      border-radius: 50px 50px 14px 14px;
+      background: linear-gradient(180deg, #d4d4d4, #777777);
+    }
+
+    .product-body {
+      padding: 20px;
+    }
+
+    .product-title {
+      min-height: 44px;
+      font-size: 15px;
+      line-height: 1.25;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .spec-list {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .spec-list span {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .spec-list strong {
+      color: var(--text);
+    }
+
+    .product-card .btn {
+      width: 100%;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 860px;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    th,
+    td {
+      padding: 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--black);
+      color: var(--white);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      background: var(--pink-soft);
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .fairchain {
+      background: var(--white);
+    }
+
+    .fairchain-grid {
+      display: grid;
+      grid-template-columns: 0.96fr 1.04fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .origin-placeholder {
+      min-height: 430px;
+      background: var(--off-white);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 32px;
+      color: #999999;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .origin-placeholder::before {
+      content: "Origin / farmers / roastery / team image placeholder";
+      max-width: 320px;
+    }
+
+    .fairchain p,
+    .maintenance p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #444444;
+    }
+
+    .maintenance {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .maintenance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .support-list div {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 16px 18px;
+      font-weight: 800;
+    }
+
+    .bundle-card.featured {
+      border-color: var(--pink);
+      background: var(--pink-soft);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .faq-item {
+      padding: 22px;
+      cursor: pointer;
+    }
+
+    .faq-item:hover {
+      border-color: var(--pink);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .faq-question span {
+      color: var(--pink);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 260ms ease;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 220px;
+      padding-top: 14px;
+    }
+
+    .quote {
+      background: var(--off-white);
+      border-top: 1px solid var(--line);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .quote-panel {
+      background: var(--white);
+      padding: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 12px 13px;
+      font: inherit;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px rgba(232,62,140,0.12);
+    }
+
+    textarea,
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .quote-panel .btn {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .newsletter {
+      background: var(--black);
+      color: var(--white);
+      padding: 54px 0;
+    }
+
+    .newsletter-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .newsletter h2 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .newsletter p {
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input {
+      min-width: 220px;
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .intro-grid,
+      .fairchain-grid,
+      .maintenance-grid,
+      .quote-grid,
+      .newsletter-inner,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: grid;
+      }
+
+      .cards-grid,
+      .included-grid,
+      .product-grid,
+      .bundles-grid,
+      .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 56px 0;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-actions,
+      .newsletter-form {
+        display: grid;
+      }
+
+      .btn,
+      .nav-cta {
+        width: 100%;
+      }
+
+      .cards-grid,
+      .included-grid,
+      .product-grid,
+      .bundles-grid,
+      .faq-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 330px;
+        padding: 24px;
+      }
+
+      .machine-placeholder {
+        height: 260px;
+      }
+
+      .bag-placeholder {
+        width: 88px;
+        height: 120px;
+        right: 24px;
+        bottom: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">We’re proud to announce that we’ve been re-certified as a B Corp</div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="#" class="brand" aria-label="Moyee Coffee home">
+        <span class="brand-mark">M</span>
+        <span>Moyee Coffee</span>
+      </a>
+      <div class="nav-links">
+        <a href="#choose">Choose setup</a>
+        <a href="#machines">Machines</a>
+        <a href="#compare">Compare</a>
+        <a href="#fairchain">FairChain</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <a href="#quote" class="nav-cta">Get quote</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container breadcrumb">Home / Professional Coffee Machines</div>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Professional Coffee Machines Ireland</div>
+          <h1>Premium coffee solutions for offices, cafés and workplaces across Ireland</h1>
+          <p class="hero-copy">From bean-to-cup office machines to high-volume commercial barista machines, Moyee provides coffee equipment, installation, maintenance and ethically sourced coffee supply for businesses of all sizes.</p>
+          <div class="hero-actions">
+            <a href="#quote" class="btn pink">Get a machine quote</a>
+            <a href="#choose" class="btn secondary">Find the right machine</a>
+          </div>
+          <div class="trust-strip" aria-label="Service highlights">
+            <span class="trust-chip">Office coffee machines</span>
+            <span class="trust-chip">Commercial espresso</span>
+            <span class="trust-chip">Installation support</span>
+            <span class="trust-chip">FairChain coffee supply</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Machine and coffee placeholder visual">
+          <div class="machine-placeholder"></div>
+          <div class="bag-placeholder">Fair<br>Chain</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-band">
+      <div class="container intro-grid reveal">
+        <div>
+          <h2>More than a machine. A complete coffee setup.</h2>
+          <p>Your coffee machine is used every day by your team, clients and visitors. Moyee helps businesses choose the right machine, pair it with FairChain coffee, and build a setup that suits the size and rhythm of the workplace.</p>
+        </div>
+        <div class="mini-proof">
+          <div class="proof-item">Machine guidance by office size and use case</div>
+          <div class="proof-item">Coffee supply with Moyee FairChain coffee</div>
+          <div class="proof-item">Installation, setup and maintenance options</div>
+          <div class="proof-item">Quote route for offices, cafés and larger workplaces</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="choose">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Choose by business type</div>
+            <h2>Start with your team size.</h2>
+          </div>
+          <p>Procurement does not start with a model number. It starts with the people using the machine, the drinks they want, and how often the office needs coffee.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="choice-card reveal">
+            <h3>Small Office</h3>
+            <div class="range">5–20</div>
+            <p>Best for startups, studios, hybrid teams and small workplaces.</p>
+            <a href="#machines" class="mini-link">View small office setup →</a>
+          </article>
+          <article class="choice-card reveal">
+            <h3>Growing Office</h3>
+            <div class="range">20–75</div>
+            <p>Best for teams with steady daily coffee demand and shared kitchen spaces.</p>
+            <a href="#compare" class="mini-link">Compare office machines →</a>
+          </article>
+          <article class="choice-card reveal">
+            <h3>Large Workplace</h3>
+            <div class="range">75+</div>
+            <p>Best for high-volume teams, bigger offices and customer-facing environments.</p>
+            <a href="#quote" class="mini-link">Get tailored quote →</a>
+          </article>
+          <article class="choice-card reveal">
+            <h3>Café / Hospitality</h3>
+            <div class="range">BAR</div>
+            <p>Best for cafés, restaurants, hotels and barista-led service spaces.</p>
+            <a href="#machines" class="mini-link">View espresso machines →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">What is included</div>
+            <h2>Machine, coffee, setup and support.</h2>
+          </div>
+          <p>A proper office coffee setup needs more than equipment. It needs reliable coffee supply, practical support and a clear reason to choose Moyee over a generic supplier.</p>
+        </div>
+        <div class="included-grid">
+          <article class="included-card reveal">
+            <span class="number">01</span>
+            <h3>The Machine</h3>
+            <p>Professional equipment matched to your team size, space, usage and drink preferences.</p>
+          </article>
+          <article class="included-card reveal">
+            <span class="number">02</span>
+            <h3>The Coffee</h3>
+            <p>Moyee FairChain coffee supplied alongside your machine, roasted at origin in Kenya and Ethiopia.</p>
+          </article>
+          <article class="included-card reveal">
+            <span class="number">03</span>
+            <h3>Installation</h3>
+            <p>Delivery, setup guidance and support getting your machine ready for daily workplace use.</p>
+          </article>
+          <article class="included-card reveal">
+            <span class="number">04</span>
+            <h3>Maintenance</h3>
+            <p>Cleaning guidance, troubleshooting and servicing options depending on your chosen package.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="machines" class="products">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">All Professional Coffee Machines</div>
+            <h2>Choose the right machine for your business.</h2>
+          </div>
+          <p>Product image placeholders can be replaced with the existing Shopify machine images. Each card adds the missing procurement detail: best fit, team size and machine type.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <div class="product-img"></div>
+            <div class="product-body">
+              <div class="product-title">Jura W8</div>
+              <div class="price">€2,456.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Small office</span>
+                <span><strong>Team size</strong> 5–20</span>
+                <span><strong>Type</strong> Bean-to-cup</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img"></div>
+            <div class="product-body">
+              <div class="product-title">Jura X10 Dark Inox</div>
+              <div class="price">€3,358.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Growing office</span>
+                <span><strong>Team size</strong> 20–50</span>
+                <span><strong>Type</strong> Bean-to-cup</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img"></div>
+            <div class="product-body">
+              <div class="product-title">Jura GIGA X3c</div>
+              <div class="price">€5,908.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Large workplace</span>
+                <span><strong>Team size</strong> 50–100</span>
+                <span><strong>Type</strong> Bean-to-cup</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img"></div>
+            <div class="product-body">
+              <div class="product-title">Jura GIGA X8c</div>
+              <div class="price">€7,808.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> High-volume office</span>
+                <span><strong>Team size</strong> 100+</span>
+                <span><strong>Type</strong> Bean-to-cup</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img accessory"></div>
+            <div class="product-body">
+              <div class="product-title">Jura Cool Control 2.5 L</div>
+              <div class="price">€425.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Milk drinks</span>
+                <span><strong>Team size</strong> Add-on</span>
+                <span><strong>Type</strong> Accessory</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img espresso"></div>
+            <div class="product-body">
+              <div class="product-title">Sanremo D8 Espresso Machine</div>
+              <div class="price">€8,056.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Cafés</span>
+                <span><strong>Team size</strong> Barista-led</span>
+                <span><strong>Type</strong> Espresso</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img espresso"></div>
+            <div class="product-body">
+              <div class="product-title">Nuova Simonelli - Appia Life XT - Espresso Machine</div>
+              <div class="price">€8,200.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Hospitality</span>
+                <span><strong>Team size</strong> Barista-led</span>
+                <span><strong>Type</strong> Espresso</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+
+          <article class="product-card reveal">
+            <div class="product-img espresso"></div>
+            <div class="product-body">
+              <div class="product-title">Nuova Simonelli - Appia Compact Espresso Machine</div>
+              <div class="price">€6,150.00</div>
+              <div class="spec-list">
+                <span><strong>Best for</strong> Smaller cafés</span>
+                <span><strong>Team size</strong> Barista-led</span>
+                <span><strong>Type</strong> Compact espresso</span>
+              </div>
+              <a href="#quote" class="btn secondary">Request quote</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Machine comparison</div>
+            <h2>Compare machines by what matters.</h2>
+          </div>
+          <p>A procurement-style view for office size, machine type, use case and price point.</p>
+        </div>
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Machine</th>
+                <th>Best for</th>
+                <th>Team size</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Next step</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jura W8</td>
+                <td><span class="badge">Small office</span></td>
+                <td>5–20 people</td>
+                <td>Bean-to-cup</td>
+                <td>€2,456.00</td>
+                <td>Request quote</td>
+              </tr>
+              <tr>
+                <td>Jura X10 Dark Inox</td>
+                <td><span class="badge">Growing office</span></td>
+                <td>20–50 people</td>
+                <td>Bean-to-cup</td>
+                <td>€3,358.00</td>
+                <td>Request quote</td>
+              </tr>
+              <tr>
+                <td>Jura GIGA X3c</td>
+                <td><span class="badge">Large office</span></td>
+                <td>50–100 people</td>
+                <td>Bean-to-cup</td>
+                <td>€5,908.00</td>
+                <td>Request quote</td>
+              </tr>
+              <tr>
+                <td>Jura GIGA X8c</td>
+                <td><span class="badge">High volume</span></td>
+                <td>100+ people</td>
+                <td>Bean-to-cup</td>
+                <td>€7,808.00</td>
+                <td>Request quote</td>
+              </tr>
+              <tr>
+                <td>Sanremo / Nuova Simonelli</td>
+                <td><span class="badge">Café & hospitality</span></td>
+                <td>Barista-led spaces</td>
+                <td>Commercial espresso</td>
+                <td>From €6,150.00</td>
+                <td>Book consultation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="fairchain" class="fairchain">
+      <div class="container fairchain-grid">
+        <div class="origin-placeholder reveal"></div>
+        <div class="reveal">
+          <div class="eyebrow">FairChain advantage</div>
+          <h2>A better machine is only half the story.</h2>
+          <p>Most suppliers stop at equipment. Moyee connects your machine with FairChain coffee — coffee roasted at origin and designed to keep more value in coffee-producing countries.</p>
+          <p>Your workplace gets professional equipment, reliable coffee supply and a stronger impact story behind every cup.</p>
+          <a href="#quote" class="btn pink">Build my office coffee setup</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="maintenance">
+      <div class="container maintenance-grid">
+        <div class="reveal">
+          <div class="eyebrow">Maintenance and support</div>
+          <h2>Because a broken coffee machine becomes everyone’s problem.</h2>
+          <p>We help your business choose the right setup, understand maintenance needs and build a support plan around your office usage.</p>
+        </div>
+        <div class="support-list reveal">
+          <div>Delivery and setup support</div>
+          <div>Cleaning and care guidance</div>
+          <div>Maintenance and servicing options</div>
+          <div>Coffee supply planning</div>
+          <div>Upgrade advice as your team grows</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Office coffee packages</div>
+            <h2>Solution bundles.</h2>
+          </div>
+          <p>These routeways can later become dedicated bundle pages for small teams, ESG-focused procurement and enterprise buyers.</p>
+        </div>
+        <div class="bundles-grid">
+          <article class="bundle-card reveal">
+            <h3>Starter Office Coffee</h3>
+            <p>For small teams and hybrid offices that need a simple, reliable setup.</p>
+            <a href="#quote" class="mini-link">Get starter quote →</a>
+          </article>
+          <article class="bundle-card featured reveal">
+            <h3>Complete Office Coffee Solution</h3>
+            <p>Machine, FairChain coffee, delivery, setup and maintenance support in one package.</p>
+            <a href="#quote" class="mini-link">Build my solution →</a>
+          </article>
+          <article class="bundle-card reveal">
+            <h3>Sustainable Office Coffee</h3>
+            <p>For ESG-conscious teams that want better sourcing behind the daily cup.</p>
+            <a href="#quote" class="mini-link">Explore ESG package →</a>
+          </article>
+          <article class="bundle-card reveal">
+            <h3>Enterprise Coffee Solution</h3>
+            <p>For larger offices, multi-site teams and high-volume workplace needs.</p>
+            <a href="#quote" class="mini-link">Talk to Moyee →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">FAQs</div>
+            <h2>Questions businesses ask before choosing a machine.</h2>
+          </div>
+          <p>Designed for procurement clarity and future FAQ schema implementation.</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item reveal open">
+            <div class="faq-question">Which coffee machine is best for a 10-person office? <span>+</span></div>
+            <div class="faq-answer">A compact bean-to-cup machine or premium filter setup is usually enough, depending on how many coffees the team drinks per day.</div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-question">Which coffee machine is best for a 50-person office? <span>+</span></div>
+            <div class="faq-answer">A 50-person office usually needs a higher-capacity bean-to-cup machine with espresso, americano and milk drink options.</div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-question">Is maintenance included? <span>+</span></div>
+            <div class="faq-answer">Maintenance support depends on the machine and package selected. Moyee can advise on servicing, troubleshooting and care requirements.</div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-question">Can we Lease or buy the machine? <span>+</span></div>
+            <div class="faq-answer">The page can support both purchase and quote-based routes. Lease messaging should be added once commercial terms are confirmed.</div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-question">Does it work with Moyee FairChain coffee? <span>+</span></div>
+            <div class="faq-answer">Yes. The office coffee solution should be framed around Moyee FairChain coffee supply alongside the machine setup.</div>
+          </div>
+          <div class="faq-item reveal">
+            <div class="faq-question">Can Moyee supply multiple office locations? <span>+</span></div>
+            <div class="faq-answer">Yes, multi-site requirements should be routed through a tailored business quote and account support conversation.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote" class="quote">
+      <div class="container quote-grid">
+        <div class="reveal">
+          <div class="eyebrow">Get a recommendation</div>
+          <h2>Tell us your team size. We’ll help recommend the right machine.</h2>
+          <p class="hero-copy">No jargon. No pressure. Just the right setup for your workplace, coffee volume and impact goals.</p>
+          <p style="font-weight: 700; color: var(--muted);">Prefer to talk? Call Moyee on (01) 531 4775 or email hello@moyeecoffee.ie.</p>
+        </div>
+        <form class="quote-panel reveal">
+          <div class="form-grid">
+            <label>Company name<input type="text" placeholder="Company Ltd." /></label>
+            <label>Your name<input type="text" placeholder="Name" /></label>
+            <label>Email<input type="email" placeholder="you@company.com" /></label>
+            <label>Phone<input type="tel" placeholder="+353" /></label>
+            <label>Team size<select><option>5–20 people</option><option>20–75 people</option><option>75+ people</option><option>Multi-site / enterprise</option><option>Café / hospitality</option></select></label>
+            <label>Need<select><option>Not sure yet</option><option>Buy a machine</option><option>Lease / service package</option><option>Coffee supply + machine</option><option>Maintenance support</option></select></label>
+            <label class="full">Message<textarea placeholder="Tell us about your office, coffee volume, machine preference or timeline..."></textarea></label>
+          </div>
+          <button class="btn pink" type="button">Get my office coffee quote</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div>
+          <h2>Join our FairChain community.</h2>
+          <p>Coffee, impact stories and business updates from Moyee.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="text" placeholder="First name" aria-label="First name" />
+          <input type="email" placeholder="Email address" aria-label="Email address" />
+          <button class="btn pink" type="button">Join</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Moyee Coffee Ireland</strong><br />
+        49/50 Coleraine Street, Dublin 7, D07 XW62<br />
+        +353 1 531 4775 · hello@moyeecoffee.ie
+      </div>
+      <div>Professional Coffee Machines · Office Coffee Solutions</div>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    document.querySelectorAll('.faq-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
